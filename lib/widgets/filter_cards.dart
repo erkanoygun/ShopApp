@@ -7,15 +7,16 @@ class FitersCard extends StatelessWidget {
   final String text;
   final double borderRadis = 10.0;
   final double blurRadius = 5.0;
-  static final double containerSize = ScreenUtil().setHeight(40);
+  static final double containerHeight = ScreenUtil().setHeight(40);
+  static final double containerWidth = ScreenUtil().setWidth(100);
   static double iconSize = ScreenUtil().setHeight(15);
   static final textSize = ScreenUtil().setSp(15);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: containerSize,
+      width: containerWidth,
+      height: containerHeight,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(borderRadis)).w,
@@ -28,7 +29,7 @@ class FitersCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(5.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

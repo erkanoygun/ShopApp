@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Shop App',
           theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+                backgroundColor: Colors.transparent, elevation: 0),
             primarySwatch: Colors.blue,
           ),
           home: HomePage(),

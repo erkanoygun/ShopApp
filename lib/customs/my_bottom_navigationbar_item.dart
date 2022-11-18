@@ -5,7 +5,9 @@ class MyBottomNavigationBarItem extends StatelessWidget {
       {super.key,
       this.iconSize = 24,
       this.textSize = 18,
-      required this.isSelect,required this.text,required this.icon});
+      required this.isSelect,
+      required this.text,
+      required this.icon});
   final double iconSize;
   final double textSize;
   final bool isSelect;
@@ -23,33 +25,38 @@ class MyBottomNavigationBarItem extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: itemBottomPadding),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Expanded(
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
+            child: GestureDetector(
+              onTap: (){
+                print("Tap Bottom Bar Item");
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: Icon(
                       icon,
                       size: iconSize,
                     ),
                   ),
-                ),
-                Expanded(
-                  child: Text(
-                    text,
-                    style: TextStyle(fontSize: textSize),
+                  Expanded(
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: textSize),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Align(
             alignment: FractionalOffset.bottomCenter,
             child: isSelect
-                ? const Icon(Icons.linear_scale_outlined, color: Colors.green,)
+                ? const Icon(
+                    Icons.linear_scale_outlined,
+                    color: Colors.green,
+                  )
                 : const SizedBox(),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/views/HomePage/widgets/my_app_bar.dart';
 import '../../customs/my_bottom_navigationbar.dart';
 import '../../customs/my_bottom_navigationbar_item.dart';
 import '../../widgets/filter_cards.dart';
@@ -10,52 +11,39 @@ class HomePage extends StatelessWidget {
   final double gridWievCardSize = ScreenUtil().setHeight(200);
   final double crossAxisSpacing = ScreenUtil().setHeight(40);
   final double bottomBarItemIconSize = ScreenUtil().setHeight(25);
-  final double bottomBarHeight = ScreenUtil().setHeight(60);
+  final double bottomBarHeight = ScreenUtil().setHeight(55);
   final double bottomBarItemTextSize = ScreenUtil().setSp(13);
-  
 
   @override
   Widget build(BuildContext context) {
-    // 56 App bar height
     return Scaffold(
       bottomNavigationBar: MyBottomNavigationBar(
         bottomBarHeight: bottomBarHeight,
         bottomBarItem: [
-          MyBottomNavigationBarItem(
-            iconSize: bottomBarItemIconSize,
-            textSize: bottomBarItemTextSize,
-            isSelect: true,
-            text: TextConstant.bottomBarItem1,
-            icon: Icons.home,
-          ),
-          MyBottomNavigationBarItem(
-            iconSize: bottomBarItemIconSize,
-            textSize: bottomBarItemTextSize,
-            isSelect: false,
-            text: TextConstant.bottomBarItem2,
-            icon: Icons.category_rounded,
-          ),
-          MyBottomNavigationBarItem(
-            iconSize: bottomBarItemIconSize,
-            textSize: bottomBarItemTextSize,
-            isSelect: false,
-            text: TextConstant.bottomBarItem3,
-            icon: Icons.favorite,
-          ),
-          MyBottomNavigationBarItem(
-            iconSize: bottomBarItemIconSize,
-            textSize: bottomBarItemTextSize,
-            isSelect: false,
-            text: TextConstant.bottomBarItem4,
-            icon: Icons.person,
-          ),
+          bottomNavigationBarItem(
+              isSelect: true,
+              icon: Icons.home,
+              text: TextConstant.bottomBarItem1),
+          bottomNavigationBarItem(
+              isSelect: false,
+              icon: Icons.category_rounded,
+              text: TextConstant.bottomBarItem2),
+          bottomNavigationBarItem(
+              isSelect: false,
+              icon: Icons.favorite,
+              text: TextConstant.bottomBarItem3),
+          bottomNavigationBarItem(
+              isSelect: false,
+              icon: Icons.person,
+              text: TextConstant.bottomBarItem4),
         ],
-      ),
-      appBar: AppBar(
-        title: const Text(TextConstant.appBarText),
       ),
       body: Column(
         children: [
+          Expanded(
+            flex: 2,
+            child: MyAppBar(),
+          ),
           Expanded(
             flex: 1,
             child: Row(
@@ -77,7 +65,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 5,
+            flex: 9,
             child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15).r,
               child: GridView.builder(
@@ -106,6 +94,15 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  MyBottomNavigationBarItem bottomNavigationBarItem(
+      {required bool isSelect, required String text, required IconData icon}) {
+    return MyBottomNavigationBarItem(
+      iconSize: bottomBarItemIconSize,
+      textSize: bottomBarItemTextSize,
+      isSelect: isSelect,
+      text: text,
+      icon: icon,
+    );
+  }
 }
-
-
