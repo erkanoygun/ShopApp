@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../constant/text_constant.dart';
+import '../../../constant/app/texts.dart';
 
 class MyAppBar extends StatelessWidget {
   MyAppBar({super.key});
@@ -17,7 +17,7 @@ class MyAppBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            TextConstant.appBarText,
+            AppText.appBarTitle,
             style: Theme.of(context).textTheme.headline3!.merge(
                   const TextStyle(
                       color: Colors.black, fontWeight: FontWeight.w500),

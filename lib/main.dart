@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/view-model/home_page_view_model.dart';
 import 'package:shop_app/views/HomePage/home_page.dart';
 
 void main() {
@@ -13,14 +15,17 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: const Size(360, 640),
       builder: (context, child) {
-        return MaterialApp(
-          title: 'Shop App',
-          theme: ThemeData(
-            appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.transparent, elevation: 0),
-            primarySwatch: Colors.blue,
+        return ChangeNotifierProvider(
+          create: (context) => AppViewModel(),
+          child: MaterialApp(
+            title: 'Shop App',
+            theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+                  backgroundColor: Colors.transparent, elevation: 0),
+              primarySwatch: Colors.blue,
+            ),
+            home: HomePage(),
           ),
-          home: HomePage(),
         );
       },
     );
