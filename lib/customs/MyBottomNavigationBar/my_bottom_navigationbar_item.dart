@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/view-model/home_page_view_model.dart';
 
 class MyBottomNavigationBarItem extends StatelessWidget {
-  const MyBottomNavigationBarItem(
-      {super.key,
-      this.iconSize = 24,
-      this.textSize = 18,
-      required this.isSelect,
-      required this.text,
-      required this.icon});
+  const MyBottomNavigationBarItem({
+    super.key,
+    this.iconSize = 24,
+    this.textSize = 18,
+    required this.text,
+    required this.icon,
+    required this.index,
+    required this.selectedIndex,
+    required this.pageController,
+  });
   final double iconSize;
+  final int index;
   final double textSize;
-  final bool isSelect;
   final String text;
   final IconData icon;
   final double itemBottomPadding = 3.0;
   final double containerAllItemPadding = 1.0;
+  final int selectedIndex;
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
+    AppViewModel mystate = Provider.of<AppViewModel>(context, listen: false);
     return Container(
       padding: EdgeInsets.all(containerAllItemPadding),
       child: Stack(
@@ -25,9 +33,12 @@ class MyBottomNavigationBarItem extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: itemBottomPadding),
-            child: GestureDetector(
-              onTap: (){
-                print("Tap Bottom Bar Item");
+            child: InkWell(
+              onTap: () {
+                pageController.animateToPage(index,
+                    duration: const Duration(milliseconds: 250),
+                    curve: Curves.easeInOut);
+                mystate.changeSelecktPage(index);
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,6 +49,8 @@ class MyBottomNavigationBarItem extends StatelessWidget {
                     child: Icon(
                       icon,
                       size: iconSize,
+                      color:
+                          index == selectedIndex ? Colors.green : Colors.grey,
                     ),
                   ),
                   Expanded(
@@ -52,7 +65,7 @@ class MyBottomNavigationBarItem extends StatelessWidget {
           ),
           Align(
             alignment: FractionalOffset.bottomCenter,
-            child: isSelect
+            child: index == selectedIndex
                 ? const Icon(
                     Icons.linear_scale_outlined,
                     color: Colors.green,

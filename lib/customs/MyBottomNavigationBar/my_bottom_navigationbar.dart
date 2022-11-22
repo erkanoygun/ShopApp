@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'my_bottom_navigationbar_item.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
   const MyBottomNavigationBar(
       {super.key,
       required this.bottomBarItem,
-      this.bottomBarHeight = 65,
       this.backgraundColor = Colors.transparent});
-  final double bottomBarHeight;
+  static double bottomBarHeight = ScreenUtil().setHeight(55);
   final List<MyBottomNavigationBarItem> bottomBarItem;
   final Color backgraundColor;
+
 
   @override
   Widget build(BuildContext context) {
