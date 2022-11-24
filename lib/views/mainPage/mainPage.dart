@@ -21,6 +21,7 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<AppViewModel>(context, listen: false).getProducts();
     return Scaffold(
       bottomNavigationBar: Consumer<AppViewModel>(
         builder: (context, mystate, child) {

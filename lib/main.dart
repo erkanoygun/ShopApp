@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                   backgroundColor: Colors.transparent, elevation: 0),
               primarySwatch: Colors.blue,
             ),
-            home: const DetailPage(),//MainPage(),
+            home: MainPage(),
           ),
         );
       },

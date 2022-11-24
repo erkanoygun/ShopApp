@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/view-model/home_page_view_model.dart';
-import '../../../constant/app/texts.dart';
-import '../../../constant/style/text_size.dart';
+import 'package:shop_app/views/DetailPage/detail_page.dart';
+import 'package:shop_app/views/HomePage/widgets/add_cart_button_small.dart';
+import 'package:shop_app/views/HomePage/widgets/fav_icon.dart';
+import 'package:shop_app/views/HomePage/widgets/product_image.dart';
+import 'package:shop_app/views/HomePage/widgets/product_name_price_widget.dart';
 import '../../../constant/style/widget_size.dart';
 
 class MyGridWievBuilder extends StatelessWidget {
   const MyGridWievBuilder({super.key});
-  static final double productNameTextSize = TextSize.textSize12;
-  static final double productPriceTextSize = TextSize.textSize16;
+  
   static final double gridWievCardSize = WidgetSize.heightSize220;
   static final double crossAxisSpacing = WidgetSize.heightSize40;
-  static final double productImageWidth = WidgetSize.heightSize140;
-  static final double productImageHeight = WidgetSize.heightSize140;
-  static final double favIconSize = WidgetSize.heightSize25;
-  static final double addToCartButtonWidth = WidgetSize.heightSize120;
-  static final double addToCartButtonHeight = WidgetSize.heightSize25;
+
+  final Color containerBackGroundColor = Colors.transparent;
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<AppViewModel>(context, listen: false).getProducts();
     return Consumer<AppViewModel>(
       builder: (context, mystate, child) {
         return GridView.builder(
@@ -32,51 +30,42 @@ class MyGridWievBuilder extends StatelessWidget {
           ),
           itemCount: mystate.products.length,
           itemBuilder: (BuildContext ctx, index) {
-            return Stack(
-              children: [
-                Container(
-                  alignment: Alignment.topCenter,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(0),
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(
+                      product: mystate.products[index],
+                    ),
                   ),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        width: productImageWidth,
-                        height: productImageHeight,
-                        child: Image.asset(mystate.products[index].imgPath),
-                      ),
-                      Text(
-                        mystate.products[index].name,
-                        style: TextStyle(fontSize: productNameTextSize),
-                      ),
-                      Text(
-                        mystate.products[index].price,
-                        style: TextStyle(
-                            fontSize: productPriceTextSize,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          minimumSize:
-                              Size(addToCartButtonWidth, addToCartButtonHeight),
-                          foregroundColor: Colors.black,
+                );
+              },
+              child: Stack(
+                children: [
+                  Container(
+                    alignment: Alignment.topCenter,
+                    decoration: BoxDecoration(
+                      color: containerBackGroundColor,
+                    ),
+                    child: Column(
+                      children: [
+                        MyProductImage(
+                          mystate: mystate,
+                          index: index,
                         ),
-                        onPressed: () {},
-                        child: const Text(AppText.addCartButtonText),
-                      ),
-                    ],
+                        ProductNameAndPrice(mystate: mystate, index: index,),
+                        AddCartButtonSmall(
+                            mystate: mystate, productIndex: index),
+                      ],
+                    ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Icon(
-                    Icons.favorite_border,
-                    size: favIconSize,
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: MyFavIcon(mystate: mystate, productIndex: index),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           },
         );

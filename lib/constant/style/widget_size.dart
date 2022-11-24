@@ -8,11 +8,15 @@ abstract class WidgetSize{
   static double heightSize28 = ScreenUtil().setHeight(35);
   static double heightSize40 = ScreenUtil().setHeight(40);
   static double heightSize55 = ScreenUtil().setHeight(55);
+  static double heightSize65 = ScreenUtil().setHeight(65);
   static double heightSize120 = ScreenUtil().setHeight(120);
   static double heightSize140 = ScreenUtil().setHeight(140);
   static double heightSize220 = ScreenUtil().setHeight(220);
+  static double heightSize300 = ScreenUtil().setHeight(300);
+  static double heightSize306 = ScreenUtil().setHeight(306);
 
   static double widthSize22 = ScreenUtil().setWidth(22);
   static double widthSize25 = ScreenUtil().setWidth(25);
   static double widthSize100 = ScreenUtil().setWidth(100);
+  static double widthSize306 = ScreenUtil().setWidth(306);
 }

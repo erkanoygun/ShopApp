@@ -8,4 +8,6 @@ abstract class AppText{
   static const String filtersCardFilter = "Filter";
   static const String filtersCardSearch = "Search";
   static const String addCartButtonText = "Add to Cart";
+  static const String productDimensionsTitle = "Dimensions";
+  static const String productWeightTitle = "Weight";
 }
