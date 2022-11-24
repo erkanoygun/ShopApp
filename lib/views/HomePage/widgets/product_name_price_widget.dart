@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../constant/style/text_size.dart';
-import '../../../view-model/home_page_view_model.dart';
+import '../../../view-model/app_view_model.dart';
 
 class ProductNameAndPrice extends StatelessWidget {
   const ProductNameAndPrice({super.key,required this.mystate,required this.index});

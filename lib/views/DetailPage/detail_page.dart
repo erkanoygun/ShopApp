@@ -28,7 +28,7 @@ class DetailPage extends StatelessWidget {
                   description: product.description,
                 ),
                 ProductPriceAndCartButton(productPrice: product.price),
-                StarsRating(
+                StarsRatingWidget(
                     rating: product.rating,
                     numberOfIcon: 5,
                     iconSize: iconSize),

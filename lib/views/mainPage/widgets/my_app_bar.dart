@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/constant/style/icon_size.dart';
-import 'package:shop_app/view-model/home_page_view_model.dart';
-import '../../../constant/app/texts.dart';
+import 'package:shop_app/view-model/app_view_model.dart';
+import '../../../constant/app/app_texts.dart';
 import '../../../constant/style/text_size.dart';
 import '../../../constant/style/widget_size.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/view-model/home_page_view_model.dart';
+import 'package:shop_app/view-model/app_view_model.dart';
 
 class MyBottomNavigationBarItem extends StatelessWidget {
   const MyBottomNavigationBarItem({

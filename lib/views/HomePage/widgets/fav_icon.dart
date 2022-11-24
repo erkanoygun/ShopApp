@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/view-model/home_page_view_model.dart';
+import 'package:shop_app/view-model/app_view_model.dart';
 import '../../../constant/style/widget_size.dart';
 
 class MyFavIcon extends StatelessWidget {

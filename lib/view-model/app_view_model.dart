@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:shop_app/model/product_model.dart';
+import '../constant/app/app_constant.dart';
 
 class AppViewModel extends ChangeNotifier {
   List<Product> products = [];
@@ -22,7 +23,7 @@ class AppViewModel extends ChangeNotifier {
         name: "${element["color"]} Arm Chair",
         description:
             "${element["color"]} Arm Chair for home. Very comfortable.",
-        imgPath: "assets/images/${element["imgPathName"]}.png",
+        imgPath: "${AppConstant.imagePath}${element["imgPathName"]}.png",
         weight: element["weight"],
         id: "fakeId_$i",
       );
@@ -51,7 +52,6 @@ class AppViewModel extends ChangeNotifier {
   }
 
   void addCartList(String id) {
-    //bool isCartList = cartList.contains(id);
     cartList.add(id);
     notifyListeners();
   }

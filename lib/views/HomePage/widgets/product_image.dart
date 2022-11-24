@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../constant/style/widget_size.dart';
-import '../../../view-model/home_page_view_model.dart';
+import '../../../view-model/app_view_model.dart';
 
 class MyProductImage extends StatelessWidget {
   const MyProductImage({super.key,required this.mystate, required this.index});

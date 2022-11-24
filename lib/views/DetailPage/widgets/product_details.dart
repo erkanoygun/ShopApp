@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../constant/app/texts.dart';
+import '../../../constant/app/app_texts.dart';
 import '../../../constant/style/text_size.dart';
 import '../../../constant/style/widget_size.dart';
 

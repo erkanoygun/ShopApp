@@ -3,13 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:shop_app/views/CategoriesPage/categories_page.dart';
 import 'package:shop_app/views/FavoritesPage/favorites_page.dart';
 import 'package:shop_app/views/HomePage/home_page.dart';
-import '../../constant/app/texts.dart';
+import '../../constant/app/app_texts.dart';
 import '../../constant/style/icon_size.dart';
 import '../../constant/style/text_size.dart';
 import '../../constant/style/widget_size.dart';
 import '../../customs/MyBottomNavigationBar/my_bottom_navigationbar.dart';
 import '../../customs/MyBottomNavigationBar/my_bottom_navigationbar_item.dart';
-import '../../view-model/home_page_view_model.dart';
+import '../../view-model/app_view_model.dart';
 import '../profilePage/profile_page.dart';
 
 class MainPage extends StatelessWidget {

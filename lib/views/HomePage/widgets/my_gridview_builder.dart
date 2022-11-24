@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/view-model/home_page_view_model.dart';
+import 'package:shop_app/view-model/app_view_model.dart';
 import 'package:shop_app/views/DetailPage/detail_page.dart';
 import 'package:shop_app/views/HomePage/widgets/add_cart_button_small.dart';
 import 'package:shop_app/views/HomePage/widgets/fav_icon.dart';

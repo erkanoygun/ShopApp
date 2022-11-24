@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/views/mainPage/widgets/my_app_bar.dart';
-import 'package:shop_app/views/HomePage/widgets/my_gridwiev_builder.dart';
-import '../../constant/app/texts.dart';
+import 'package:shop_app/views/HomePage/widgets/my_gridview_builder.dart';
+import '../../constant/app/app_texts.dart';
 import 'widgets/filter_cards.dart';
 
 class HomePage extends StatelessWidget {
