@@ -6,6 +6,7 @@ abstract class TextSize{
   static double textSize12 = ScreenUtil().setSp(12);
   static double textSize14 = ScreenUtil().setSp(14);
   static double textSize16 = ScreenUtil().setSp(16);
+  static double textSize18 = ScreenUtil().setSp(18);
   static double textSize22 = ScreenUtil().setSp(22);
   static double textSize24 = ScreenUtil().setSp(24);
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/views/CategoriesPage/categories_page.dart';
 import 'package:shop_app/views/FavoritesPage/favorites_page.dart';
@@ -56,10 +55,8 @@ class MainPage extends StatelessWidget {
         },
       ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
-        onPageChanged: (value) {
-          print("Value: $value");
-        },
         children: const [
           HomePage(),
           CategoriesPage(),
