@@ -6,6 +6,7 @@ import 'package:shop_app/view-model/app_view_model.dart';
 import '../../../constant/app/app_texts.dart';
 import '../../../constant/style/text_size.dart';
 import '../../../constant/style/widget_size.dart';
+import '../../ShopCartPage/shopping_cart_page.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
@@ -34,43 +35,53 @@ class MyAppBar extends StatelessWidget {
                   TextStyle(color: titleColor, fontWeight: FontWeight.w500),
                 ),
           ),
-          Stack(
-            children: [
-              Icon(
-                Icons.shopping_cart,
-                size: shoppingCartIconSize,
-              ),
-              Positioned.fill(
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(cartLenghtContainerRadius),
-                    ),
-                    elevation: 0,
-                    color: cartLenghtBackGround,
-                    borderOnForeground: false,
-                    child: SizedBox(
-                      height: shoppingCartItemSizeHeight,
-                      width: shoppingCartItemSizeWidth,
-                      child: Consumer<AppViewModel>(
-                        builder: (context, mystate, child) {
-                          return Center(
-                            child: Text(
-                              mystate.cartList.length.toString(),
-                              style: TextStyle(
-                                  fontSize: cartItemLenghtTextSize,
-                                  color: cartItemLenghtTextColor),
-                            ),
-                          );
-                        },
+          GestureDetector(
+            onTap: (){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ShoppingCartPage(),
+                  ),
+                );
+            },
+            child: Stack(
+              children: [
+                Icon(
+                  Icons.shopping_cart,
+                  size: shoppingCartIconSize,
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.circular(cartLenghtContainerRadius),
+                      ),
+                      elevation: 0,
+                      color: cartLenghtBackGround,
+                      borderOnForeground: false,
+                      child: SizedBox(
+                        height: shoppingCartItemSizeHeight,
+                        width: shoppingCartItemSizeWidth,
+                        child: Consumer<AppViewModel>(
+                          builder: (context, mystate, child) {
+                            return Center(
+                              child: Text(
+                                mystate.cartList.length.toString(),
+                                style: TextStyle(
+                                    fontSize: cartItemLenghtTextSize,
+                                    color: cartItemLenghtTextColor),
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),

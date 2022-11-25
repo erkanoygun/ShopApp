@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../constant/style/widget_size.dart';
 
 class ProductImage extends StatelessWidget {
@@ -11,7 +10,7 @@ class ProductImage extends StatelessWidget {
   static final double containerHeight = WidgetSize.heightSize300;
   static final double imageSizedBoxHeight = WidgetSize.heightSize306;
   static final double imageSizedBoxWidth = WidgetSize.widthSize306;
-  static final EdgeInsets paddingOnly = const EdgeInsets.only(top: 16).r;
+  static final EdgeInsets paddingOnly = const EdgeInsets.only(top: 24, bottom: 3).r;
 
   @override
   Widget build(BuildContext context) {
