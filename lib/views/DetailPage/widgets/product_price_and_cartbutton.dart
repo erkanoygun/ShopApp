@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import '../../../constant/app/app_texts.dart';
-import '../../../constant/style/text_size.dart';
-import '../../../constant/style/widget_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/constant/app/app_texts.dart';
 
 class ProductPriceAndCartButton extends StatelessWidget {
   const ProductPriceAndCartButton({super.key, required this.productPrice});
-  static final double boxHeightSize = WidgetSize.heightSize55;
-  static final double buttonSize = WidgetSize.heightSize40;
+  static final double boxHeightSize = 55.h;
+  static final double buttonSize = 40.h;
   final Color buttonColor = Colors.black;
-  static final priceFontSize = TextSize.textSize24;
-  static final buttonFontSize = TextSize.textSize14;
-  final double buttonRadius = 18.0;
+  static final double priceFontSize = 24.sp;
+  static final double buttonFontSize = 14.sp;
+  static final double buttonRadius = 18.0.r;
   final String productPrice;
 
   @override

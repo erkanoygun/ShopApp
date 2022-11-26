@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../constant/style/text_size.dart';
-import '../../../constant/style/widget_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../customs/StarRatingBar/star_rating_bar.dart';
 
 class StarsRatingWidget extends StatelessWidget {
@@ -12,8 +11,8 @@ class StarsRatingWidget extends StatelessWidget {
   final double rating;
   final int numberOfIcon;
   final double iconSize;
-  static final double fontSize = TextSize.textSize16;
-  static final double boxHeightSize = WidgetSize.heightSize55;
+  static final double fontSize = 16.sp;
+  static final double boxHeightSize = 55.h;
 
   @override
   Widget build(BuildContext context) {

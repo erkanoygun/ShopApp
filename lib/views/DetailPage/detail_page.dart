@@ -5,12 +5,11 @@ import 'package:shop_app/views/DetailPage/widgets/product_details.dart';
 import 'package:shop_app/views/DetailPage/widgets/product_image.dart';
 import 'package:shop_app/views/DetailPage/widgets/product_price_and_cartbutton.dart';
 import 'package:shop_app/views/DetailPage/widgets/star_rating_bar.dart';
-import '../../constant/style/icon_size.dart';
 import '../../model/product_model.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key, required this.product});
-  static double iconSize = IconSize.iconSize28;
+  static double iconSize = 28.h;
   final Product product;
   static final paddingSymmetric = const EdgeInsets.symmetric(horizontal: 10).r; 
 

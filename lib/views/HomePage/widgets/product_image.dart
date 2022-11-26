@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import '../../../constant/style/widget_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../view-model/app_view_model.dart';
 
 class MyProductImage extends StatelessWidget {
   const MyProductImage({super.key,required this.mystate, required this.index});
-  static final double productImageWidth = WidgetSize.heightSize140;
-  static final double productImageHeight = WidgetSize.heightSize140;
+  static final double productImageWidth = 140.w;
+  static final double productImageHeight = 140.h;
   final AppViewModel mystate;
   final int index;
 

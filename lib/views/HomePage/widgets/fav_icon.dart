@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
-import '../../../constant/style/widget_size.dart';
 
 class MyFavIcon extends StatelessWidget {
   const MyFavIcon({super.key,required this.mystate,required this.productIndex});
   final AppViewModel mystate;
   final int productIndex;
-  static final double favIconSize = WidgetSize.heightSize25;
+  static final double favIconSize = 25.h;
 
   @override
   Widget build(BuildContext context) {

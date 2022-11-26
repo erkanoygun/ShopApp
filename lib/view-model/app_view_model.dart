@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:shop_app/model/product_model.dart';
-import '../constant/app/app_constant.dart';
+import '../core/constant/app/app_constant.dart';
 
 class AppViewModel extends ChangeNotifier {
   List<Product> products = [];

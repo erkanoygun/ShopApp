@@ -1,39 +1,55 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/views/ShopCartPage/widgets/product_add_remove_widget.dart';
 import 'package:shop_app/views/ShopCartPage/widgets/product_details.dart';
 
-class ProductInformationWidget extends StatelessWidget {
-  const ProductInformationWidget({super.key});
+class ProductInforWidget extends StatelessWidget {
+  const ProductInforWidget(
+      {super.key,
+      required this.dimensions,
+      required this.weight,
+      required this.productName});
+  final String dimensions;
+  final int weight;
+  final String productName;
+  static final double containerHeight = 120.h;
+  static final double containerWidth = 280.w;
+  static final double inSideSizedBoxHeight = 120.h;
+  static final double inSideSizedBoxWidth = 175.w;
+  static final double productNameFontSize = 12.sp;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerRight,
       color: Colors.green,
-      width: ScreenUtil().setWidth(280),
-      height: ScreenUtil().setHeight(120),
+      width: containerWidth,
+      height: containerHeight,
       child: SizedBox(
-        width: ScreenUtil().setWidth(175),
-        height: ScreenUtil().setHeight(120),
+        width: inSideSizedBoxWidth,
+        height: inSideSizedBoxHeight,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               flex: 2,
               child: Text(
-                "Yellow Arm Chair",
+                productName,
                 style: TextStyle(
-                  fontSize: ScreenUtil().setSp(12),
+                  fontSize: productNameFontSize,
                 ),
               ),
             ),
-            const Expanded(
-              flex: 4,
-              child: ProductDetailsWidget(),
-            ),
             Expanded(
+              flex: 4,
+              child: ProductDetailsWidget(
+                dimensions: dimensions,
+                weight: weight,
+              ),
+            ),
+            const Expanded(
               flex: 6,
-              child: Row(),
+              child: ProductAddAndRemoveWidget(),
             ),
           ],
         ),

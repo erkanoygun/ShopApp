@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../constant/style/widget_size.dart';
 
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key,required this.imgPath});
   final String imgPath;
   final Color backGroundColor = Colors.red;
-  final double containerLeftBottomRadius = 275;
-  static final double containerHeight = WidgetSize.heightSize300;
-  static final double imageSizedBoxHeight = WidgetSize.heightSize306;
-  static final double imageSizedBoxWidth = WidgetSize.widthSize306;
+  static final double containerLeftBottomRadius = 275.r;
+  static final double containerHeight = 300.h;
+  static final double imageSizedBoxHeight = 306.h;
+  static final double imageSizedBoxWidth = 306.w;
   static final EdgeInsets paddingOnly = const EdgeInsets.only(top: 24, bottom: 3).r;
 
   @override

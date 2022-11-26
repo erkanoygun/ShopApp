@@ -2,32 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductImageWidget extends StatelessWidget {
-  const ProductImageWidget({super.key});
+  const ProductImageWidget({super.key,required this.imgPath});
+  final String imgPath;
+  final double containerRadius = 16.0;
+  final double containerBlurRadius = 10.0;
+  final EdgeInsets marginSymmetric = const EdgeInsets.symmetric(horizontal: 16);
+  static final double containerAndSizedBoxHght = 160.h;
+  static final double containerAndSizedBoxWdh = 160.w;
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.all(
-            Radius.circular(16),
+            Radius.circular(containerRadius),
           ),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.black,
-                blurRadius: 10.0,
-                offset: Offset(0.0, 0.75))
+              color: Colors.black,
+              blurRadius: containerBlurRadius,
+              offset: const Offset(0.0, 0.75),
+            )
           ],
         ),
-        margin: EdgeInsets.symmetric(horizontal: 16),
-        width: ScreenUtil().setWidth(160),
-        height: ScreenUtil().setHeight(160),
+        margin: marginSymmetric,
+        width: containerAndSizedBoxWdh,
+        height: containerAndSizedBoxHght,
         child: SizedBox(
-          width: ScreenUtil().setWidth(160),
-          height: ScreenUtil().setHeight(160),
-          child: Image.asset("assets/images/armchair1.png"),
+          width: containerAndSizedBoxWdh,
+          height: containerAndSizedBoxHght,
+          child: Image.asset(imgPath),
         ),
       ),
     );

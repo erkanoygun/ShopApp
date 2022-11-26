@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
-import '../../../constant/app/app_texts.dart';
-import '../../../constant/style/widget_size.dart';
+import '../../../core/constant/app/app_texts.dart';
 
 class AddCartButtonSmall extends StatelessWidget {
   const AddCartButtonSmall({super.key, required this.mystate, required this.productIndex});
   final AppViewModel mystate;
   final int productIndex;
-  static final double addToCartButtonWidth = WidgetSize.heightSize120;
-  static final double addToCartButtonHeight = WidgetSize.heightSize25;
+  static final double addToCartButtonWidth = 120.h;
+  static final double addToCartButtonHeight = 25.h;
   final Color buttonForeGroundColor = Colors.black;
   final Color buttonFBackGroundColor = Colors.transparent;
   static final Color? buttonFBackGroundColor2 = Colors.green[400];

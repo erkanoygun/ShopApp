@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/views/CategoriesPage/categories_page.dart';
 import 'package:shop_app/views/FavoritesPage/favorites_page.dart';
 import 'package:shop_app/views/HomePage/home_page.dart';
-import '../../constant/app/app_texts.dart';
-import '../../constant/style/icon_size.dart';
-import '../../constant/style/text_size.dart';
-import '../../constant/style/widget_size.dart';
+import '../../core/constant/app/app_texts.dart';
 import '../../customs/MyBottomNavigationBar/my_bottom_navigationbar.dart';
 import '../../customs/MyBottomNavigationBar/my_bottom_navigationbar_item.dart';
 import '../../view-model/app_view_model.dart';
 import '../profilePage/profile_page.dart';
 
 class MainPage extends StatelessWidget {
-  MainPage({super.key});
-  final double bottomBarItemIconSize = IconSize.iconSize25;
-  final double bottomBarHeight = WidgetSize.heightSize55;
-  final double bottomBarItemTextSize = TextSize.textSize12;
-  final PageController pageController = PageController();
+  const MainPage({super.key});
+  static final double bottomBarItemIconSize = 25.h;
+  static final double bottomBarHeight = 55.h;
+  static final double bottomBarItemTextSize = 12.sp;
+  static final PageController pageController = PageController();
 
   @override
   Widget build(BuildContext context) {

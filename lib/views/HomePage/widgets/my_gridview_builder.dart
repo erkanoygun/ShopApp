@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
 import 'package:shop_app/views/DetailPage/detail_page.dart';
@@ -6,14 +7,11 @@ import 'package:shop_app/views/HomePage/widgets/add_cart_button_small.dart';
 import 'package:shop_app/views/HomePage/widgets/fav_icon.dart';
 import 'package:shop_app/views/HomePage/widgets/product_image.dart';
 import 'package:shop_app/views/HomePage/widgets/product_name_price_widget.dart';
-import '../../../constant/style/widget_size.dart';
 
 class MyGridWievBuilder extends StatelessWidget {
   const MyGridWievBuilder({super.key});
-  
-  static final double gridWievCardSize = WidgetSize.heightSize220;
-  static final double crossAxisSpacing = WidgetSize.heightSize40;
-
+  static final double gridWievCardSize = 220.h;
+  static final double crossAxisSpacing = 40.h;
   final Color containerBackGroundColor = Colors.transparent;
 
   @override

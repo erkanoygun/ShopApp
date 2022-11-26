@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../constant/app/app_texts.dart';
-import '../../../constant/style/text_size.dart';
-import '../../../constant/style/widget_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/constant/app/app_texts.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key, required this.productDimensions, required this.productWeight});
   final String productDimensions;
   final String productWeight;
-  static final double boxHeightSize = WidgetSize.heightSize65;
-  static final double titleFontSize = TextSize.textSize12;
-  static final double detailValueFontSize = TextSize.textSize18;
+  static final double boxHeightSize = 65.h;
+  static final double titleFontSize = 12.sp;
+  static final double detailValueFontSize = 18.sp;
   final String weightUnit = "Kg";
 
   @override

@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/constant/style/icon_size.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
-import '../../../constant/app/app_texts.dart';
-import '../../../constant/style/text_size.dart';
-import '../../../constant/style/widget_size.dart';
+import '../../../core/constant/app/app_texts.dart';
 import '../../ShopCartPage/shopping_cart_page.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({super.key});
-  static final double shoppingCartItemSizeHeight = WidgetSize.heightSize22;
-  static final double shoppingCartItemSizeWidth = WidgetSize.widthSize22;
-  final EdgeInsets onlyPadding =
-      const EdgeInsets.only(top: 35, left: 15, right: 15);
-  static final double shoppingCartIconSize = IconSize.iconSize55;
+  static final double shoppingCartItemSizeHeight = 22.h;
+  static final double shoppingCartItemSizeWidth = 22.w;
+  static final EdgeInsets onlyPadding =
+      const EdgeInsets.only(top: 35, left: 15, right: 15).r;
+  static final double shoppingCartIconSize = 55.h;
   final Color titleColor = Colors.black;
   final Color cartLenghtBackGround = Colors.red;
-  static final cartItemLenghtTextSize = TextSize.textSize12;
-  final double cartLenghtContainerRadius = 180.0;
+  static final cartItemLenghtTextSize = 12.sp;
+  static final double cartLenghtContainerRadius = 180.0.r;
   final Color cartItemLenghtTextColor = Colors.white;
 
   @override
