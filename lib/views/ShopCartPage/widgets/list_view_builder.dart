@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/views/ShopCartPage/widgets/product_image_container.dart';
-import 'package:shop_app/views/ShopCartPage/widgets/product_information_container.dart';
+import 'package:shop_app/views/ShopCartPage/widgets/product_info_container.dart';
 
 class MyListViewBuilder extends StatelessWidget {
   const MyListViewBuilder({super.key});
-  static final double containerHeight = 170.h;
+  static final double sizedBoxrHeight = 170.h;
   final String dimensions = "30 x 26 x 26";
   final int weight = 60;
 
@@ -15,14 +15,13 @@ class MyListViewBuilder extends StatelessWidget {
       child: ListView.builder(
         itemCount: 1, //Data
         itemBuilder: (context, index) {
-          return Container(
-            color: Colors.amber,
+          return SizedBox(
             width: double.infinity,
-            height: containerHeight,
+            height: sizedBoxrHeight,
             child: Stack(
               alignment: Alignment.centerRight,
               children: [
-                ProductInforWidget(
+                ProductInfoWidget(
                   dimensions: dimensions,
                   weight: weight,
                   productName: "Yellow Arm Chair.", //Data

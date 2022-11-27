@@ -16,7 +16,7 @@ class ProductImageWidget extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.all(
             Radius.circular(containerRadius),
           ),

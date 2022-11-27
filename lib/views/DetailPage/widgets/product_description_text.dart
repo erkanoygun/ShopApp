@@ -5,7 +5,6 @@ class ProductDescription extends StatelessWidget {
   const ProductDescription({super.key,required this.description});
   final String description;
   static final double sizedBoxHeight = 55.h;
-  static final double fontSize = 18.sp;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class ProductDescription extends StatelessWidget {
       width: double.infinity,
       child: Text(
         description,
-        style: TextStyle(fontSize: fontSize),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }

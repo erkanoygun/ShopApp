@@ -14,7 +14,7 @@ class MyAppBar extends StatelessWidget {
   static final double shoppingCartIconSize = 55.h;
   final Color titleColor = Colors.black;
   final Color cartLenghtBackGround = Colors.red;
-  static final cartItemLenghtTextSize = 12.sp;
+  //static final cartItemLenghtTextSize = 12.sp;
   static final double cartLenghtContainerRadius = 180.0.r;
   final Color cartItemLenghtTextColor = Colors.white;
 
@@ -28,18 +28,18 @@ class MyAppBar extends StatelessWidget {
         children: [
           Text(
             AppText.appBarTitle,
-            style: Theme.of(context).textTheme.headline4!.merge(
-                  TextStyle(color: titleColor, fontWeight: FontWeight.w500),
+            style: Theme.of(context).textTheme.displayMedium!.merge(
+                  const TextStyle(fontWeight: FontWeight.w400),
                 ),
           ),
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ShoppingCartPage(),
-                  ),
-                );
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ShoppingCartPage(),
+                ),
+              );
             },
             child: Stack(
               children: [
@@ -66,9 +66,14 @@ class MyAppBar extends StatelessWidget {
                             return Center(
                               child: Text(
                                 mystate.cartList.length.toString(),
-                                style: TextStyle(
-                                    fontSize: cartItemLenghtTextSize,
-                                    color: cartItemLenghtTextColor),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleSmall!
+                                    .merge(
+                                      TextStyle(
+                                          color: cartItemLenghtTextColor,
+                                          fontWeight: FontWeight.normal),
+                                    ),
                               ),
                             );
                           },

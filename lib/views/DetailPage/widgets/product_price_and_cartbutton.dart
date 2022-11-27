@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/extension/color_extensions.dart';
 import '../../../core/constant/app/app_texts.dart';
+import '../../../core/constant/app/colors.dart';
 
 class ProductPriceAndCartButton extends StatelessWidget {
   const ProductPriceAndCartButton({super.key, required this.productPrice});
   static final double boxHeightSize = 55.h;
   static final double buttonSize = 40.h;
-  final Color buttonColor = Colors.black;
-  static final double priceFontSize = 24.sp;
-  static final double buttonFontSize = 14.sp;
   static final double buttonRadius = 18.0.r;
   final String productPrice;
 
@@ -22,15 +21,16 @@ class ProductPriceAndCartButton extends StatelessWidget {
         children: [
           Text(
             productPrice,
-            style:
-                TextStyle(fontSize: priceFontSize, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.bodyLarge!.merge(
+                  const TextStyle(fontWeight: FontWeight.bold),
+                ),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(buttonRadius),
               ),
-              backgroundColor: buttonColor,
+              backgroundColor: AppColor.brown.toColor(),
               fixedSize: Size.fromHeight(
                 buttonSize,
               ),
@@ -38,8 +38,10 @@ class ProductPriceAndCartButton extends StatelessWidget {
             onPressed: () {},
             child: Text(
               AppText.addCartButtonText,
-              style: TextStyle(
-                  fontSize: buttonFontSize, fontWeight: FontWeight.bold),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .merge(TextStyle(color: AppColor.white.toColor())),
             ),
           ),
         ],

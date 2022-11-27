@@ -10,7 +10,7 @@ class FitersCards extends StatelessWidget {
   static final double containerHeight = 40.h;
   static final double containerWidth = 100.w;
   static final double iconSize = 22.h;
-  static final textSize = 18.h;
+  //static final textSize = 18.h;
   static final EdgeInsets paddingAll = const EdgeInsets.all(5.0).r;
 
   @override
@@ -40,7 +40,7 @@ class FitersCards extends StatelessWidget {
             ),
             Text(
               text,
-              style: TextStyle(fontSize: textSize),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ],
         ),

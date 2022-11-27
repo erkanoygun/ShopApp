@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constant/app/app_texts.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
   const ProductDetailsWidget({super.key,required this.dimensions,required this.weight});
-  static final double titleTextFontSize = 9.sp;
-  static final double textFontSize = 10.sp;
   final String dimensions;
   final int weight;
 
@@ -18,13 +15,11 @@ class ProductDetailsWidget extends StatelessWidget {
             children: [
               Text(
                 AppText.productDimensionsTitle,
-                style: TextStyle(fontSize: titleTextFontSize),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 dimensions,
-                style: TextStyle(
-                    fontSize: textFontSize,
-                    fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleSmall,
               )
             ],
           ),
@@ -34,13 +29,11 @@ class ProductDetailsWidget extends StatelessWidget {
             children: [
               Text(
                 AppText.productWeightTitle,
-                style: TextStyle(fontSize: titleTextFontSize),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 "$weight Kg.",
-                style: TextStyle(
-                    fontSize: textFontSize,
-                    fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.titleSmall,
               )
             ],
           ),

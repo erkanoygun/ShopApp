@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/extension/color_extensions.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
+
+import '../../../core/constant/app/colors.dart';
 
 class MyFavIcon extends StatelessWidget {
   const MyFavIcon({super.key,required this.mystate,required this.productIndex});
@@ -18,7 +21,7 @@ class MyFavIcon extends StatelessWidget {
           ? Icon(
               Icons.favorite,
               size: favIconSize,
-              color: Colors.red,
+              color: AppColor.red.toColor(),
             )
           : Icon(
               Icons.favorite_border,

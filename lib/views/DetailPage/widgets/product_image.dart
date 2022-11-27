@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key,required this.imgPath});
   final String imgPath;
-  final Color backGroundColor = Colors.red;
   static final double containerLeftBottomRadius = 275.r;
   static final double containerHeight = 300.h;
   static final double imageSizedBoxHeight = 306.h;
@@ -19,7 +18,7 @@ class ProductImage extends StatelessWidget {
           height: containerHeight,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: backGroundColor,
+            color: Theme.of(context).primaryColor,
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(containerLeftBottomRadius),
             ),

@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/extension/color_extensions.dart';
+import '../../../core/constant/app/colors.dart';
 
 class ProductAddAndRemoveWidget extends StatelessWidget {
   const ProductAddAndRemoveWidget({super.key});
   static final double sizedBoxWeight = 85.w;
   static final double sizedBoxHeight = 28.h;
+  final double buttonSize = 26;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        const Text("9999 ₺"),
+        Text(
+          "10000₺",
+          style: Theme.of(context).textTheme.headlineSmall!.merge(
+                const TextStyle(fontWeight: FontWeight.bold),
+              ),
+        ),
         Stack(
           children: [
             SizedBox(
@@ -22,20 +30,23 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    color: Colors.grey,
+                    color: AppColor.verySoftBrown.toColor(),
                     width: 65.w,
                     height: 18.h,
-                    child: Text("1"),
+                    child: Text(
+                      "1",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: SizedBox(
-                      width: 28.w,
-                      height: 28.h,
+                      width: buttonSize.w,
+                      height: buttonSize.h,
                       child: FloatingActionButton(
                         heroTag: "demoTag1",
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.red,
+                        foregroundColor: AppColor.black.toColor(),
+                        backgroundColor: AppColor.red.toColor(),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(3),
                         ),
@@ -47,12 +58,12 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: SizedBox(
-                      width: 28.w,
-                      height: 28.h,
+                      width: buttonSize.w,
+                      height: buttonSize.h,
                       child: FloatingActionButton(
                         heroTag: "demoTag2",
-                        foregroundColor: Colors.black,
-                        backgroundColor: Colors.green,
+                        foregroundColor: AppColor.black.toColor(),
+                        backgroundColor: AppColor.green.toColor(),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(3),
                         ),
@@ -70,6 +81,3 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
     );
   }
 }
-
-
-

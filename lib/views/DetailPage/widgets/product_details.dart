@@ -3,12 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constant/app/app_texts.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key, required this.productDimensions, required this.productWeight});
+  const ProductDetails(
+      {super.key,
+      required this.productDimensions,
+      required this.productWeight});
   final String productDimensions;
   final String productWeight;
   static final double boxHeightSize = 65.h;
-  static final double titleFontSize = 12.sp;
-  static final double detailValueFontSize = 18.sp;
   final String weightUnit = "Kg";
 
   @override
@@ -24,11 +25,13 @@ class ProductDetails extends StatelessWidget {
             children: [
               Text(
                 AppText.productDimensionsTitle,
-                style: TextStyle(fontSize: titleFontSize),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 productDimensions,
-                style: TextStyle(fontSize: detailValueFontSize, fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodyMedium!.merge(
+                      const TextStyle(fontWeight: FontWeight.bold),
+                    ),
               ),
             ],
           ),
@@ -37,11 +40,13 @@ class ProductDetails extends StatelessWidget {
             children: [
               Text(
                 AppText.productWeightTitle,
-                style: TextStyle(fontSize: titleFontSize),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
                 "$productWeight $weightUnit.",
-                style: TextStyle(fontSize: detailValueFontSize, fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.bodyMedium!.merge(
+                      const TextStyle(fontWeight: FontWeight.bold),
+                    ),
               ),
             ],
           ),
