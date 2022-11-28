@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shop_app/core/constant/app/colors.dart';
+import 'package:shop_app/core/extension/color_extensions.dart';
 import '../../../customs/StarRatingBar/star_rating_bar.dart';
 
 class StarsRatingWidget extends StatelessWidget {
@@ -24,6 +26,7 @@ class StarsRatingWidget extends StatelessWidget {
         fontSize: fontSize,
         iconSize: iconSize,
         numberOfIcon: numberOfIcon,
+        color: AppColor.brown.toColor(),
       ),
     );
   }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../core/constant/app/app_texts.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
-  const ProductDetailsWidget({super.key,required this.dimensions,required this.weight});
-  final String dimensions;
+  const ProductDetailsWidget({super.key,required this.dimensionsValue,required this.weight});
+  final String dimensionsValue;
   final int weight;
 
   @override
@@ -18,7 +18,7 @@ class ProductDetailsWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleSmall,
               ),
               Text(
-                dimensions,
+                dimensionsValue,
                 style: Theme.of(context).textTheme.titleSmall,
               )
             ],

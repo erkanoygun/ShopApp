@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/core/extension/color_extensions.dart';
+import 'package:shop_app/view-model/app_view_model.dart';
 import '../../../core/constant/app/colors.dart';
 
 class ProductAddAndRemoveWidget extends StatelessWidget {
-  const ProductAddAndRemoveWidget({super.key});
+  const ProductAddAndRemoveWidget({super.key,required this.index,required this.mystate});
   static final double sizedBoxWeight = 85.w;
   static final double sizedBoxHeight = 28.h;
   final double buttonSize = 26;
+  final int index;
+  final AppViewModel mystate;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
                     width: 65.w,
                     height: 18.h,
                     child: Text(
-                      "1",
+                      mystate.cartList[index].quantitiy.toString(),
                       style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ),
@@ -44,13 +47,15 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
                       width: buttonSize.w,
                       height: buttonSize.h,
                       child: FloatingActionButton(
-                        heroTag: "demoTag1",
+                        heroTag: "Tag1$index",
                         foregroundColor: AppColor.black.toColor(),
                         backgroundColor: AppColor.red.toColor(),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(3),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          mystate.deleteQuantitiy(mystate.cartList[index].id);
+                        },
                         child: const Icon(Icons.remove),
                       ),
                     ),
@@ -61,13 +66,15 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
                       width: buttonSize.w,
                       height: buttonSize.h,
                       child: FloatingActionButton(
-                        heroTag: "demoTag2",
+                        heroTag: "Tag2$index",
                         foregroundColor: AppColor.black.toColor(),
                         backgroundColor: AppColor.green.toColor(),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(3),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          mystate.addQuantitiy(mystate.cartList[index].id);
+                        },
                         child: const Icon(Icons.add),
                       ),
                     ),

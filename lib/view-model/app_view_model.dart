@@ -6,7 +6,7 @@ import '../core/constant/app/app_constant.dart';
 class AppViewModel extends ChangeNotifier {
   List<Product> products = [];
   List<String> favoritesList = [];
-  List<String> cartList = [];
+  List cartList = [];
   int selectedIndex = 0;
   final _random = Random();
   List<Map> randomArmChairList = [
@@ -26,6 +26,7 @@ class AppViewModel extends ChangeNotifier {
         imgPath: "${AppConstant.imagePath}${element["imgPathName"]}.png",
         weight: element["weight"],
         id: "fakeId_$i",
+        quantitiy: 1,
       );
 
       products.add(product);
@@ -51,8 +52,36 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addCartList(String id) {
-    cartList.add(id);
+  void addCartList(Product product) {
+    cartList.add(product);
     notifyListeners();
   }
+
+  void addQuantitiy(String id){
+    for(Product i in cartList){
+      if(i.id == id){
+        i.quantitiy = i.quantitiy + 1;
+        break;
+      }
+    }
+    notifyListeners();
+  }
+
+  void deleteQuantitiy(String id){
+    for(Product i in cartList){
+      if(i.id == id){
+        if(i.quantitiy == 1){
+          print("Girdi");
+          cartList.removeWhere((element) => element.id == id);
+          break;
+        }
+        else{
+          i.quantitiy = i.quantitiy - 1;
+        }
+        
+      }
+    }
+    notifyListeners();
+  }
+
 }

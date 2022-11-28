@@ -15,7 +15,7 @@ class AddCartButtonSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    isCartList =  mystate.cartList.contains(mystate.products[productIndex].id);
+    isCartList =  mystate.cartList.contains(mystate.products[productIndex]);
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
         minimumSize: Size(addToCartButtonWidth, addToCartButtonHeight),
@@ -23,10 +23,10 @@ class AddCartButtonSmall extends StatelessWidget {
         backgroundColor: isCartList ? AppColor.softGreen2.toColor() : Colors.transparent,
       ),
       onPressed: () {
-        isCartList =  mystate.cartList.contains(mystate.products[productIndex].id);
+        isCartList =  mystate.cartList.contains(mystate.products[productIndex]);
         return isCartList
             ? print("Sepete Git")
-            : mystate.addCartList(mystate.products[productIndex].id);
+            : mystate.addCartList(mystate.products[productIndex]);
       },
       child: isCartList
           ? const Icon(Icons.shopping_cart_checkout_rounded)

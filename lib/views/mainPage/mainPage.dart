@@ -10,16 +10,28 @@ import '../../customs/MyBottomNavigationBar/my_bottom_navigationbar_item.dart';
 import '../../view-model/app_view_model.dart';
 import '../profilePage/profile_page.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
-  static final double bottomBarItemIconSize = 25.h;
-  static final double bottomBarHeight = 55.h;
-  static final double bottomBarItemTextSize = 12.sp;
-  static final PageController pageController = PageController();
 
   @override
-  Widget build(BuildContext context) {
+  State<MainPage> createState() => _MainPageeState();
+}
+
+
+
+final double bottomBarItemIconSize = 25.h;
+final double bottomBarHeight = 55.h;
+final double bottomBarItemTextSize = 12.sp;
+final PageController pageController = PageController();
+
+class _MainPageeState extends State<MainPage> {
+  @override
+  void initState() {
     Provider.of<AppViewModel>(context, listen: false).getProducts();
+    super.initState();
+  }
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Consumer<AppViewModel>(
         builder: (context, mystate, child) {

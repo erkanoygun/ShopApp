@@ -6,11 +6,13 @@ class StarsRatingBar extends StatelessWidget {
       required this.rating,
       this.numberOfIcon = 5,
       this.iconSize = 36.0,
-      this.fontSize = 24.0});
+      this.fontSize = 24.0,
+      this.color = Colors.black});
   final double rating;
   final int numberOfIcon;
   final double iconSize;
   final double fontSize;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +51,7 @@ class StarsRatingBar extends StatelessWidget {
             Icon(
               Icons.star,
               size: iconSize,
+              color: color,
             ),
           );
           rating--;
@@ -57,6 +60,7 @@ class StarsRatingBar extends StatelessWidget {
             Icon(
               Icons.star_half,
               size: iconSize,
+              color: color,
             ),
           );
           rating = 0;
@@ -65,6 +69,7 @@ class StarsRatingBar extends StatelessWidget {
             Icon(
               Icons.star_border_sharp,
               size: iconSize,
+              color: color,
             ),
           );
         }

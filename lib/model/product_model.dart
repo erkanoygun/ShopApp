@@ -7,6 +7,7 @@ class Product {
   int weight;
   String dimensions;
   String id;
+  int quantitiy;
 
   Product(
       {required this.name,
@@ -15,7 +16,9 @@ class Product {
       required this.rating,
       required this.imgPath,
       required this.weight,
-      required this.dimensions,required this.id});
+      required this.dimensions,
+      required this.id,
+      required this.quantitiy});
 
   factory Product.randomCreate({
     required String name,
@@ -23,6 +26,7 @@ class Product {
     required String imgPath,
     required int weight,
     required String id,
+    required int quantitiy,
   }) {
     return Product(
         name: name,
@@ -31,6 +35,7 @@ class Product {
         price: "3999 ₺",
         rating: 3.6,
         imgPath: imgPath,
+        quantitiy: quantitiy,
         weight: weight,
         dimensions: "30 x 26 x 32");
   }
