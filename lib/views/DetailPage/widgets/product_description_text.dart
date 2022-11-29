@@ -14,6 +14,7 @@ class ProductDescription extends StatelessWidget {
       child: Text(
         description,
         style: Theme.of(context).textTheme.bodyMedium,
+        
       ),
     );
   }

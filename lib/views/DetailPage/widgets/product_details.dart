@@ -9,7 +9,7 @@ class ProductDetails extends StatelessWidget {
       required this.productWeight});
   final String productDimensions;
   final String productWeight;
-  static final double boxHeightSize = 65.h;
+  static final double boxHeightSize = 40.h;
   final String weightUnit = "Kg";
 
   @override

@@ -6,6 +6,8 @@ import '../core/constant/app/app_constant.dart';
 class AppViewModel extends ChangeNotifier {
   List<Product> products = [];
   List<String> favoritesList = [];
+  final String loremIpsum =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   List cartList = [];
   int selectedIndex = 0;
   final _random = Random();
@@ -21,8 +23,7 @@ class AppViewModel extends ChangeNotifier {
           randomArmChairList[_random.nextInt(randomArmChairList.length)];
       Product product = Product.randomCreate(
         name: "${element["color"]} Arm Chair",
-        description:
-            "${element["color"]} Arm Chair for home. Very comfortable.",
+        description: loremIpsum,
         imgPath: "${AppConstant.imagePath}${element["imgPathName"]}.png",
         weight: element["weight"],
         id: "fakeId_$i",
@@ -57,9 +58,9 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addQuantitiy(String id){
-    for(Product i in cartList){
-      if(i.id == id){
+  void addQuantitiy(String id) {
+    for (Product i in cartList) {
+      if (i.id == id) {
         i.quantitiy = i.quantitiy + 1;
         break;
       }
@@ -67,21 +68,17 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void deleteQuantitiy(String id){
-    for(Product i in cartList){
-      if(i.id == id){
-        if(i.quantitiy == 1){
-          print("Girdi");
+  void deleteQuantitiy(String id) {
+    for (Product i in cartList) {
+      if (i.id == id) {
+        if (i.quantitiy == 1) {
           cartList.removeWhere((element) => element.id == id);
           break;
-        }
-        else{
+        } else {
           i.quantitiy = i.quantitiy - 1;
         }
-        
       }
     }
     notifyListeners();
   }
-
 }
