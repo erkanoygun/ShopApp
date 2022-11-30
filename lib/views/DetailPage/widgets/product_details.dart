@@ -18,7 +18,7 @@ class ProductDetails extends StatelessWidget {
       height: boxHeightSize,
       width: double.infinity,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,

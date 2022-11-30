@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shop_app/views/DetailPage/widgets/product_description_text.dart';
 import 'package:shop_app/views/DetailPage/widgets/product_details.dart';
 import 'package:shop_app/views/DetailPage/widgets/product_image.dart';
-import 'package:shop_app/views/DetailPage/widgets/product_price_and_cartbutton.dart';
+import 'package:shop_app/views/DetailPage/widgets/cart_button_fav_icon.dart';
 import 'package:shop_app/views/DetailPage/widgets/product_title.dart';
 import 'package:shop_app/views/DetailPage/widgets/star_rating_bar.dart';
 import '../../model/product_model.dart';
@@ -60,7 +60,7 @@ class DetailPage extends StatelessWidget {
                   ),
                   Expanded(
                     flex: 3,
-                    child: ProductCartButtonFavIcon(productPrice: product.price),
+                    child: ProductCartButtonFavIcon(product: product),
                   ),
                 ],
               ),

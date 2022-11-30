@@ -6,7 +6,8 @@ import '../../../core/constant/app/app_texts.dart';
 import '../../../core/constant/app/colors.dart';
 
 class AddCartButtonSmall extends StatelessWidget {
-  const AddCartButtonSmall({super.key, required this.mystate, required this.productIndex});
+  const AddCartButtonSmall(
+      {super.key, required this.mystate, required this.productIndex});
   final AppViewModel mystate;
   final int productIndex;
   static final double addToCartButtonWidth = 120.h;
@@ -15,22 +16,27 @@ class AddCartButtonSmall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    isCartList =  mystate.cartList.contains(mystate.products[productIndex]);
+    isCartList = mystate.cartList.contains(mystate.products[productIndex]);
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
         minimumSize: Size(addToCartButtonWidth, addToCartButtonHeight),
         foregroundColor: AppColor.black.toColor(),
-        backgroundColor: isCartList ? AppColor.softGreen2.toColor() : Colors.transparent,
+        backgroundColor:
+            isCartList ? AppColor.softGreen2.toColor() : Colors.transparent,
       ),
       onPressed: () {
-        isCartList =  mystate.cartList.contains(mystate.products[productIndex]);
-        return isCartList
-            ? print("Sepete Git")
-            : mystate.addCartList(mystate.products[productIndex]);
+        return onTabButton(mystate);
       },
       child: isCartList
           ? const Icon(Icons.shopping_cart_checkout_rounded)
           : const Text(AppText.addCartButtonText),
     );
+  }
+
+  void onTabButton(AppViewModel mystate) {
+    isCartList = mystate.cartList.contains(mystate.products[productIndex]);
+    return isCartList
+        ? print("Sepete Git")
+        : mystate.addCartList(mystate.products[productIndex]);
   }
 }

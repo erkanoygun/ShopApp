@@ -21,4 +21,6 @@ class MyTextStyle {
       TextStyle(fontSize: 18.sp, color: AppColor.black.toColor());
   static TextStyle bodyLarge =
       TextStyle(fontSize: 24.sp, color: AppColor.black.toColor());
+  static TextStyle labelSmall =
+      TextStyle(fontSize: 20.sp, color: AppColor.black.toColor());
 }

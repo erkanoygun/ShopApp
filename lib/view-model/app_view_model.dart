@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shop_app/model/product_model.dart';
 import '../core/constant/app/app_constant.dart';
 
@@ -54,7 +55,9 @@ class AppViewModel extends ChangeNotifier {
   }
 
   void addCartList(Product product) {
-    cartList.add(product);
+    if(!cartList.contains(product)){
+      cartList.add(product);
+    }
     notifyListeners();
   }
 

@@ -5,7 +5,8 @@ import 'package:shop_app/view-model/app_view_model.dart';
 import '../../../core/constant/app/colors.dart';
 
 class ProductAddAndRemoveWidget extends StatelessWidget {
-  const ProductAddAndRemoveWidget({super.key,required this.index,required this.mystate});
+  const ProductAddAndRemoveWidget(
+      {super.key, required this.index, required this.mystate});
   static final double sizedBoxWeight = 85.w;
   static final double sizedBoxHeight = 28.h;
   final double buttonSize = 26;
@@ -56,7 +57,9 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
                         onPressed: () {
                           mystate.deleteQuantitiy(mystate.cartList[index].id);
                         },
-                        child: const Icon(Icons.remove),
+                        child: mystate.cartList[index].quantitiy == 1
+                            ? const Icon(Icons.delete)
+                            : const Icon(Icons.remove),
                       ),
                     ),
                   ),

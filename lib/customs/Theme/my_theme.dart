@@ -21,6 +21,7 @@ class MyTheme {
       bodySmall: MyTextStyle.bodySmall,
       bodyMedium: MyTextStyle.bodyMedium,
       bodyLarge: MyTextStyle.bodyLarge,
+      labelSmall: MyTextStyle.labelSmall,
     ),
   );
 }
