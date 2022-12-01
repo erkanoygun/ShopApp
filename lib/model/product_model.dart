@@ -1,7 +1,7 @@
 class Product {
   String name;
   String description;
-  String price;
+  int price;
   double rating;
   String imgPath;
   int weight;
@@ -27,12 +27,13 @@ class Product {
     required int weight,
     required String id,
     required int quantitiy,
+    required int price,
   }) {
     return Product(
         name: name,
         id: id,
         description: description,
-        price: "3999 ₺",
+        price: price,
         rating: 3.6,
         imgPath: imgPath,
         quantitiy: quantitiy,

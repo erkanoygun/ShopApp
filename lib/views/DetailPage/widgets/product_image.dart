@@ -7,7 +7,7 @@ import '../../../core/constant/app/colors.dart';
 class ProductImage extends StatelessWidget {
   const ProductImage({super.key, required this.imgPath, required this.price});
   final String imgPath;
-  final String price;
+  final int price;
   static final double containerLeftBottomRadius = 275.r;
   static final double containerHeight = 300.h;
   static final double imageSizedBoxHeight = 306.h;
@@ -50,7 +50,7 @@ class ProductImage extends StatelessWidget {
               child: Padding(
                 padding: paddingAllPriceText,
                 child: Text(
-                  price,
+                  "$price ₺",
                   style: Theme.of(context).textTheme.bodyMedium!.merge(
                         TextStyle(
                           fontWeight: FontWeight.bold,

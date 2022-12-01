@@ -7,7 +7,7 @@ class MyBottomNavigationBar extends StatelessWidget {
       {super.key,
       required this.bottomBarItem,
       this.backgraundColor = Colors.transparent});
-  static double bottomBarHeight = ScreenUtil().setHeight(55);
+  static double bottomBarHeight = ScreenUtil().setHeight(45);
   final List<MyBottomNavigationBarItem> bottomBarItem;
   final Color backgraundColor;
 

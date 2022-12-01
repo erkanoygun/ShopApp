@@ -10,11 +10,12 @@ class AppViewModel extends ChangeNotifier {
   final String loremIpsum =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   List cartList = [];
+  int totalPrice = 0;
   int selectedIndex = 0;
   final _random = Random();
   List<Map> randomArmChairList = [
-    {"color": "Yellow", "imgPathName": "armchair1", "weight": 60},
-    {"color": "Purple", "imgPathName": "armchair2", "weight": 80}
+    {"color": "Yellow", "imgPathName": "armchair1", "weight": 60,"price" : 3999},
+    {"color": "Purple", "imgPathName": "armchair2", "weight": 80,"price" : 4999}
   ];
 
   List<Product> getProducts() {
@@ -27,6 +28,7 @@ class AppViewModel extends ChangeNotifier {
         description: loremIpsum,
         imgPath: "${AppConstant.imagePath}${element["imgPathName"]}.png",
         weight: element["weight"],
+        price: element["price"],
         id: "fakeId_$i",
         quantitiy: 1,
       );
@@ -57,6 +59,7 @@ class AppViewModel extends ChangeNotifier {
   void addCartList(Product product) {
     if(!cartList.contains(product)){
       cartList.add(product);
+      getTotalPrice();
     }
     notifyListeners();
   }
@@ -65,6 +68,7 @@ class AppViewModel extends ChangeNotifier {
     for (Product i in cartList) {
       if (i.id == id) {
         i.quantitiy = i.quantitiy + 1;
+        getTotalPrice();
         break;
       }
     }
@@ -76,12 +80,21 @@ class AppViewModel extends ChangeNotifier {
       if (i.id == id) {
         if (i.quantitiy == 1) {
           cartList.removeWhere((element) => element.id == id);
+          getTotalPrice();
           break;
         } else {
           i.quantitiy = i.quantitiy - 1;
+          getTotalPrice();
         }
       }
     }
     notifyListeners();
+  }
+
+  void getTotalPrice(){
+    totalPrice = 0;
+    for(Product i in cartList){
+      totalPrice += (i.price * i.quantitiy);
+    }
   }
 }

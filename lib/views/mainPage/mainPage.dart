@@ -19,7 +19,7 @@ class MainPage extends StatefulWidget {
 
 
 
-final double bottomBarItemIconSize = 25.h;
+final double bottomBarItemIconSize = 28.h;
 final double bottomBarHeight = 55.h;
 final double bottomBarItemTextSize = 12.sp;
 final PageController pageController = PageController();

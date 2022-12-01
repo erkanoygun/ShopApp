@@ -16,7 +16,7 @@ class ProductNameAndPrice extends StatelessWidget {
           style: Theme.of(context).textTheme.titleSmall,
         ),
         Text(
-          mystate.products[index].price,
+          "${mystate.products[index].price} ₺",
           style: Theme.of(context).textTheme.headlineSmall!.merge(
                 const TextStyle(fontWeight: FontWeight.bold),
               ),

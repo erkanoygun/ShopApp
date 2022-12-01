@@ -19,7 +19,7 @@ class ProductAddAndRemoveWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Text(
-          mystate.cartList[index].price,
+          "${mystate.cartList[index].price} ₺",
           style: Theme.of(context).textTheme.headlineSmall!.merge(
                 const TextStyle(fontWeight: FontWeight.bold),
               ),

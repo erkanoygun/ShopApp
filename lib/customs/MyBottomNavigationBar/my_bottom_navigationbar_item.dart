@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/core/constant/app/colors.dart';
+import 'package:shop_app/core/extension/color_extensions.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
 
 class MyBottomNavigationBarItem extends StatelessWidget {
@@ -20,59 +22,41 @@ class MyBottomNavigationBarItem extends StatelessWidget {
   final IconData icon;
   final double itemBottomPadding = 3.0;
   final double containerAllItemPadding = 1.0;
+  final double containerAllItemMargin = 2.0;
   final int selectedIndex;
   final PageController pageController;
+  static late AppViewModel mystate;
 
   @override
   Widget build(BuildContext context) {
-    AppViewModel mystate = Provider.of<AppViewModel>(context, listen: false);
-    return Container(
-      padding: EdgeInsets.all(containerAllItemPadding),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(bottom: itemBottomPadding),
-            child: InkWell(
-              onTap: () {
-                pageController.animateToPage(index,
-                    duration: const Duration(milliseconds: 250),
-                    curve: Curves.easeInOut);
-                mystate.changeSelecktPage(index);
-              },
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Expanded(
-                    child: Icon(
-                      icon,
-                      size: iconSize,
-                      color:
-                          index == selectedIndex ? Colors.green : Colors.grey,
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      text,
-                      style: TextStyle(fontSize: textSize),
-                    ),
-                  ),
-                ],
-              ),
+    mystate = Provider.of<AppViewModel>(context, listen: false);
+    return Expanded(
+      child: Container(
+        height: double.infinity,
+        margin: EdgeInsets.all(containerAllItemMargin),
+        padding: EdgeInsets.all(containerAllItemPadding),
+        decoration: BoxDecoration(
+          color: index == selectedIndex ? Theme.of(context).primaryColor : Colors.transparent,
+          shape: BoxShape.circle,
+          border: index == selectedIndex ? Border.all() : null,
+        ),
+        child: Padding(
+          padding: EdgeInsets.only(bottom: itemBottomPadding),
+          child: GestureDetector(
+            onTap: () {
+              pageController.animateToPage(index,
+                  duration: const Duration(milliseconds: 250),
+                  curve: Curves.easeInOut);
+              mystate.changeSelecktPage(index);
+            },
+            child: Icon(
+              icon,
+              size: iconSize,
+              color:
+                  index == selectedIndex ? AppColor.brown.toColor() : Colors.grey,
             ),
           ),
-          Align(
-            alignment: FractionalOffset.bottomCenter,
-            child: index == selectedIndex
-                ? const Icon(
-                    Icons.linear_scale_outlined,
-                    color: Colors.green,
-                  )
-                : const SizedBox(),
-          ),
-        ],
+        ),
       ),
     );
   }
