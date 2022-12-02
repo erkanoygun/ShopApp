@@ -5,7 +5,9 @@ import 'package:shop_app/core/extension/color_extensions.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
 import '../../../core/constant/app/app_texts.dart';
 import '../../../core/constant/app/colors.dart';
+import '../../../core/constant/navigation/navigation_constant.dart';
 import '../../../customs/CustomButton/custom_button.dart';
+import '../../../init/navigation/navigation_service.dart';
 import '../../../model/product_model.dart';
 
 class ProductCartButtonFavIcon extends StatelessWidget {
@@ -13,7 +15,7 @@ class ProductCartButtonFavIcon extends StatelessWidget {
   static final double boxHeightSize = 40.h;
   static final double buttonSize = 35.h;
   static final double buttonRadius = 10.0.r;
-  static final iconSize = 35.h;
+  static final iconSize = 38.h;
   final Product product;
 
   @override
@@ -63,7 +65,9 @@ class ProductCartButtonFavIcon extends StatelessWidget {
 
   void buttonOnTab(AppViewModel mystate) {
     mystate.cartList.contains(product)
-        ? print("Sepete Git 2")
+        ? NavigationService.instance.navigateToPage(
+            path: NavigationConstant.ShopingCartPage,
+          )
         : mystate.addCartList(product);
   }
 }

@@ -5,7 +5,7 @@ class ProductImageWidget extends StatelessWidget {
   const ProductImageWidget({super.key,required this.imgPath});
   final String imgPath;
   final double containerRadius = 16.0;
-  final double containerBlurRadius = 10.0;
+  final double containerBlurRadius = 5.0;
   final EdgeInsets marginSymmetric = const EdgeInsets.symmetric(horizontal: 16);
   static final double containerAndSizedBoxHght = 160.h;
   static final double containerAndSizedBoxWdh = 160.w;

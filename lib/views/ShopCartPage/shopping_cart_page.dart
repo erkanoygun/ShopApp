@@ -17,24 +17,26 @@ class ShoppingCartPage extends StatelessWidget {
     return Selector<AppViewModel, int>(
       selector: (_, mystate) => mystate.cartList.length,
       builder: (_, mystate, __) {
-        return mystate != 0 ? Scaffold(
-          appBar: const MyAppBar(title: AppText.cartPageTitle),
-          body: Padding(
-            padding: columnPaddingTop,
-            child: Column(
-              children: const [
-                Expanded(
-                  flex: 6,
-                  child: MyListViewBuilder(),
+        return mystate != 0
+            ? Scaffold(
+                appBar: const MyAppBar(title: AppText.cartPageTitle),
+                body: Padding(
+                  padding: columnPaddingTop,
+                  child: Column(
+                    children: const [
+                      Expanded(
+                        flex: 6,
+                        child: MyListViewBuilder(),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: TotalPriceAndButtonContainer(),
+                      ),
+                    ],
+                  ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: TotalPriceAndButtonContainer(),
-                ),
-              ],
-            ),
-          ),
-        ) : const EmptyListPage();
+              )
+            : const EmptyListPage();
       },
     );
   }

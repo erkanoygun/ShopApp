@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
-import 'package:shop_app/views/DetailPage/detail_page.dart';
 import 'package:shop_app/views/HomePage/widgets/add_cart_button_small.dart';
 import 'package:shop_app/views/HomePage/widgets/fav_icon.dart';
 import 'package:shop_app/views/HomePage/widgets/product_image.dart';
 import 'package:shop_app/views/HomePage/widgets/product_name_price_widget.dart';
+
+import '../../../core/constant/navigation/navigation_constant.dart';
+import '../../../init/navigation/navigation_service.dart';
 
 class MyGridWievBuilder extends StatelessWidget {
   const MyGridWievBuilder({super.key});
@@ -30,13 +32,9 @@ class MyGridWievBuilder extends StatelessWidget {
           itemBuilder: (BuildContext ctx, index) {
             return GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailPage(
-                      product: mystate.products[index],
-                    ),
-                  ),
+                NavigationService.instance.navigateToPage(
+                  path: NavigationConstant.ProductDetailPage,
+                  data: mystate.products[index],
                 );
               },
               child: Stack(
@@ -52,7 +50,10 @@ class MyGridWievBuilder extends StatelessWidget {
                           mystate: mystate,
                           index: index,
                         ),
-                        ProductNameAndPrice(mystate: mystate, index: index,),
+                        ProductNameAndPrice(
+                          mystate: mystate,
+                          index: index,
+                        ),
                         AddCartButtonSmall(
                             mystate: mystate, productIndex: index),
                       ],

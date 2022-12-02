@@ -53,7 +53,7 @@ class MyBottomNavigationBarItem extends StatelessWidget {
               icon,
               size: iconSize,
               color:
-                  index == selectedIndex ? AppColor.brown.toColor() : Colors.grey,
+                  index == selectedIndex ? AppColor.black.toColor() : Colors.grey,
             ),
           ),
         ),

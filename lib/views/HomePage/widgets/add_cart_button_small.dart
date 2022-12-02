@@ -4,6 +4,8 @@ import 'package:shop_app/core/extension/color_extensions.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
 import '../../../core/constant/app/app_texts.dart';
 import '../../../core/constant/app/colors.dart';
+import '../../../core/constant/navigation/navigation_constant.dart';
+import '../../../init/navigation/navigation_service.dart';
 
 class AddCartButtonSmall extends StatelessWidget {
   const AddCartButtonSmall(
@@ -36,7 +38,9 @@ class AddCartButtonSmall extends StatelessWidget {
   void onTabButton(AppViewModel mystate) {
     isCartList = mystate.cartList.contains(mystate.products[productIndex]);
     return isCartList
-        ? print("Sepete Git")
+        ? NavigationService.instance.navigateToPage(
+            path: NavigationConstant.ShopingCartPage,
+          )
         : mystate.addCartList(mystate.products[productIndex]);
   }
 }

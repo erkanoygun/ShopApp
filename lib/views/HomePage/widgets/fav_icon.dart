@@ -10,8 +10,9 @@ class MyFavIcon extends StatelessWidget {
       {super.key, required this.mystate, required this.productIndex});
   final AppViewModel mystate;
   final int productIndex;
-  static final double favIconSize = 25.h;
+  static final double favIconSize = 15.h;
   static late bool isFavList;
+  final double containerAllPAddingValue = 3.5;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class MyFavIcon extends StatelessWidget {
             mystate.favoritesList.contains(mystate.products[productIndex].id);
       },
       child: Container(
-        padding: EdgeInsets.all(5),
+        padding: EdgeInsets.all(containerAllPAddingValue),
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           shape: BoxShape.circle,

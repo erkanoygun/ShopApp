@@ -4,7 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:shop_app/core/constant/app/colors.dart';
 import 'package:shop_app/core/extension/color_extensions.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
-import '../../../core/constant/app/app_texts.dart';
+import '../../core/constant/navigation/navigation_constant.dart';
+import '../../init/navigation/navigation_service.dart';
 import '../../views/ShopCartPage/shopping_cart_page.dart';
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget{
@@ -41,12 +42,7 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget{
           padding: EdgeInsets.only(top: onlyPaddingTop,right: 8),
           child: GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ShoppingCartPage(),
-                ),
-              );
+              NavigationService.instance.navigateToPage(path: NavigationConstant.ShopingCartPage);
             },
             child: Stack(
               children: [

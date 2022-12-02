@@ -40,7 +40,7 @@ class TotalPriceAndButtonContainer extends StatelessWidget {
                   builder: (_, value, __) {
                     return Text(
                       "$value ₺",
-                      style: Theme.of(context).textTheme.bodyLarge!.merge(
+                      style: Theme.of(context).textTheme.labelSmall!.merge(
                             const TextStyle(fontWeight: FontWeight.bold),
                           ),
                     );
