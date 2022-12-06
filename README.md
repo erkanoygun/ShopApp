@@ -1,16 +1,17 @@
-# shop_app
+# Shopp App
 
-A new Flutter project.
+Shopping mobile application designed with Figma and coded responsively with Flutter.
 
-## Getting Started
+- **flutter version 3.3.6**
 
-This project is a starting point for a Flutter application.
+### State Managment
+- provider
 
-A few resources to get you started if this is your first Flutter project:
+### pubspec.yaml packages
+- flutter_screenutil: ^5.6.0
+- provider: ^6.0.4
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### View
+[View app color palette](https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[View app figma design](https://www.figma.com/file/9bEWuCAs3j8zdIyrsebPnX/Untitled?node-id=0%3A1)

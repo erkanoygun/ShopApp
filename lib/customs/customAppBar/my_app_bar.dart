@@ -6,20 +6,19 @@ import 'package:shop_app/core/extension/color_extensions.dart';
 import 'package:shop_app/view-model/app_view_model.dart';
 import '../../core/constant/navigation/navigation_constant.dart';
 import '../../init/navigation/navigation_service.dart';
-import '../../views/ShopCartPage/shopping_cart_page.dart';
 
 class MyAppBar extends StatelessWidget with PreferredSizeWidget{
   const MyAppBar({super.key,required this.title});
   final String title;
-  static final double shoppingCartItemSizeHeight = 20.h;
-  static final double shoppingCartItemSizeWidth = 20.w;
-  static final double shoppingCartIconSize = 48.h;
+  static final double shoppingCartItemSizeHeight = 16.h;
+  static final double shoppingCartItemSizeWidth = 16.w;
+  static final double shoppingCartIconSize = 38.h;
   static final Color titleColor = AppColor.black.toColor();
   static final Color cartLenghtBackGround = AppColor.red.toColor();
   static final double cartLenghtContainerRadius = 180.0.r;
   static final Color cartItemLenghtTextColor = AppColor.white.toColor();
   static final double onlyPaddingTop = 10.r;
-  static final double appBarToolBarHeight = 65.h;
+  static final double appBarToolBarHeight = 55.h;
 
   @override
   Widget build(BuildContext context) {
